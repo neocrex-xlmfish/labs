@@ -1,0 +1,67 @@
+# Stellar TOML for <your-domain.example>
+# Place at: https://<your-domain>/.well-known/stellar.toml
+
+# --- Organization / contact ---
+ORG_NAME="Your Organization, Inc."
+ORG_DBA="XLMFISH"
+ORG_URL="https://xlm.fish"
+ORG_PHYSICAL_ADDRESS="123 Example St, City, Country"
+ORG_PHONE="+1-555-555-5555"
+ORG_EMAIL="contact@xlm.fish"
+ORG_TWITTER="https://twitter.com/yourhandle"
+ORG_GITHUB="https://github.com/yourorg"
+ORG_DOCS="https://xlm.fish/docs"
+
+# --- Core service endpoints (if you run these services) ---
+# SEP-10 / web auth endpoint (for wallet auth)
+WEB_AUTH_ENDPOINT="https://xlm.fish/auth"
+# SEP-24 / deposit/withdraw server (anchor)
+TRANSFER_SERVER="https://xlm.fish/sep24"
+TRANSFER_SERVER_SEP0024="https://xlm.fish/sep24"
+# SEP-6 (if applicable)
+DEPOSIT_SERVER="https://xlm.fish/sep6"
+WITHDRAW_SERVER="https://xlm.fish/sep6"
+# Signing key for SEP-10 or federation (if used)
+SIGNING_KEY="GXXXXXXXXXXXX...YOUR_SIGNING_KEY..."
+
+# --- Asset (CURRENCIES) ---
+# Add one entry per asset you want wallets/indexers to recognize.
+[[CURRENCIES]]
+code="XLMFISH"
+issuer="GAX3YQC26LTS6NLW2QGRQC4MK24XKL5JLZ7KFHNERWPC3HKCT2ABTEMT"
+display_decimals=7
+name="XLMFISH"
+desc="XLMFISH — community token for the XLMFISH ecosystem. See https://xlm.fish for details."
+image="https://xlm.fish/img/xlmfish-logo-256.png"
+conditions="Issuer retains no direct custodial control over third-party user funds. Issuer key is cold. Distribution and reward flows are recorded in the public audit folder."
+fixed_number=false
+# optionally include: max_number = "1000000000"
+# include links for auditors / provenance
+documentation="https://xlm.fish/docs/token"
+whitepaper="https://xlm.fish/whitepaper.pdf"
+# optional external ids
+coingecko_id="xlmfish"   # if listed on CoinGecko
+coinmarketcap_id=""
+
+# --- Distribution & treasury (optional keys for visibility) ---
+TREASURY_ACCOUNT="GABCD...TREASURY"
+DISTRIBUTOR_ACCOUNT="GBDISTR...DIST"
+# audit proof tx hashes (comma-separated or point to audit file)
+ISSUANCE_PROOFS="https://xlm.fish/docs/audit/issuance.json"
+
+# --- Operational policy flags (informational only) ---
+AUTH_REQUIRED=false         # true if issuer uses AUTH_REQUIRED flag
+AUTH_REVOCABLE=false        # true if issuer can revoke trustlines
+# Any special policy text or link to a policy page:
+POLICY_URL="https://xlm.fish/docs/policy"
+
+# --- Optional anchor / service metadata ---
+# For anchor operators, list deposit/withdraw details or URL references.
+DEPOSIT_EXAMPLE="https://xlm.fish/sep24/deposit"
+WITHDRAW_EXAMPLE="https://xlm.fish/sep24/withdraw"
+KYC_REQUIREMENTS="https://xlm.fish/docs/kyc"
+
+# --- Misc / metadata ---
+# Maintainer & last updated (helpful for indexers)
+MAINTAINER="ops@xlm.fish"
+LAST_UPDATED="2025-11-04T00:00:00Z"
